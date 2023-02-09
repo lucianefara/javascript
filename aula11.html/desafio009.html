@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do país</title>
+</head>
+<body>
+
+    <h1>Desafio 009</h1>
+
+    Qual é o seu país? <input type="text" name="nome" id="nome">
+
+    <input type="button" value="Enviar" id="botao">
+
+    <div id="res">Resultado:</div>
+
+    <script>
+        var env= window.document.getElementById('botao')
+        env.addEventListener('click', enviado)
+
+        function enviado(){
+
+            var nom = window.document.getElementById('nome')
+            var c = String(nom.value)
+            var t = window.document.getElementById('res')
+
+            t.innerHTML = `<p> O seu país é: ${c}  </p>`
+
+            if (c == 'brasil') {
+                    t.innerHTML += `<p> Você é brasileiro! </p>`
+                } else{
+                    t.innerHTML += `<p> Você é estrangeiro! </p>`
+                }
+        } 
+    </script>
+    
+</body>
+</html>

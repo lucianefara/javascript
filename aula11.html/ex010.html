@@ -9,20 +9,33 @@
 <body>
     <h1>Sistema de Multas</h1>
 
-    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
-    <input type="button" value="Verificar" onclick="calcular()">
-    <div id="res">Resultado</div>
-
+    Velocidade do carro: <input type="number" name="vel" id="vel"> Km/h 
+    <input type="button" value="verificar" id="verificar">
+    <div id="res">resultado:</div>
+    
     <script>
-        var a = window.document.getElementById('txtlevel')
-        
-        function calcular(){
-            if (a < 60) {
-                res.innerHTML += `<p>Você será multado!</p>`
-            }
-            res.innerHTML += `<p>Dirija com cinto de segurança!</p>`
+
+        var botao = window.document.getElementById('verificar')
+        botao.addEventListener('click', resultado)
+
+
+        function resultado(){
+            var v= window.document.getElementById('vel')
+            var res = window.document.getElementById('res')
+            var vel = Number(v.value)
+
+            res.innerHTML= `<p> Sua velocidade é de ${vel}</p>`
+
+                if (vel > 60) {
+                    res.innerHTML += `<p> Multado por excesso de velocidade!</p>`
+                }
+
+            res.innerHTML += `<p> Dirija com cuidado!</p>`
+            
         }
     </script>
+
+       
     
 </body>
 </html>
