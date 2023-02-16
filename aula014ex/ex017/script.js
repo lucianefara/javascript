@@ -1,18 +1,23 @@
-function carregar(){
+function gerar() {
+    var n = window.document.getElementById('num')
+    var l = window.document.getElementById('listtab')
 
-    var msg = window.document.getElementById('msg')
-    var img = window.document.getElementById('imagem')
-    var data = new Date()
-    var hora = data.getHours()
-    msg.innerHTML = `Agora são ${hora} horas.`
-
-    if(hora >= 0 & hora <12){
-        //Foto do dia
-    } else if(hora >= 12 && hora < 18){
-        //Foto tarde
+    if(n.value.length == 0){
+        window.alert('Não é possível realizar este cálculo, insira um número acima.')
     } else{
-        // Foto noite
+
+        var nume = Number(n.value)
+        var c = 1
+
+        while(c <= 10){
+            
+            var item = document.createElement('option')
+            item.text = `${nume} x ${c} = ${nume*c}`
+
+            item.value = `l${c}`
+            l.appendChild(item)
+            c++
+
+        }
     }
-
 }
-

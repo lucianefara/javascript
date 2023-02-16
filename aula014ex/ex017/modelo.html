@@ -7,20 +7,26 @@
     <title>Modelo de Exercício</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
-<body onload="carregar()">
+<body>
     <header>
-        <h1>Hora do Dia</h1>
+        <h1>Tabuada</h1>
     </header>
 
     <section>
-        <div id="msg">
-            Aqui vai aparecer a mensagem...
+        <div id="dados">
+            <p>
+                Número: <input type="number" name="num" id="num">
+                <input type="button" id="tab" value="Gerar Tabuada" onclick="gerar()">
+            </p>
+            
 
         </div>
 
-        <div id="foto">
-            <img id="imagem" src="#" alt="Foto do dia">
-
+        <div id="lista">
+            <select name="lista" id="listtab" size="10">
+                <option> Digite um número acima.</option>
+            </select>
+            
         </div>
 
     </section>
